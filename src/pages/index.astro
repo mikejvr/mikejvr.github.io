@@ -1,6 +1,6 @@
 ---
 // 1. Import the function to grab your content
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 // 2. Fetch the 5 Pillars from your content folder
 const pillars = await getCollection('pillars');
