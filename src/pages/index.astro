@@ -7,6 +7,14 @@ const pillars = await getCollection('pillars');
 // Sort them by the 'order' we put in the markdown
 const sortedPillars = pillars.sort((a, b) => a.data.order - b.data.order);
 
+// We need to render the markdown content for each pillar
+const pillarsWithContent = await Promise.all(
+  sortedPillars.map(async (pillar) => {
+    const { Content } = await render(pillar);
+    return { ...pillar, Content };
+  })
+);
+
 const expertiseStory = "I bridge the gap between creative vision and technical execution. With over two decades of experience, I provide a full-service design infrastructure—transforming complex organizational needs into cohesive visual systems.";
 ---
 
@@ -34,21 +42,14 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 
 		<h2>Core Pillars</h2>
 		<div class="portfolio-grid">
-			{sortedPillars.map(pillar => (
-				<div class="pillar-card">
-					<h3>{pillar.data.title}</h3>
-					<p><strong>Focus:</strong> {pillar.data.focus}</p>
-					<div class="tags">
-						{pillar.data.tags.map(tag => (
-							<span class="tag">#{tag}</span>
-						))}
-					</div>
-					<hr />
-					<div class="content">
-						{/* This renders the markdown content (the client list) */}
-						<pillar.Content />
-					</div>
-				</div>
+    		{pillarsWithContent.map(pillar => (
+        		<div class="pillar-card">
+            		<h3>{pillar.data.title}</h3>
+        			<p><strong>Focus:</strong> {pillar.data.focus}</p>
+        			<div class="content">
+            			<pillar.Content />
+            		</div>
+        		</div>
 			))}
 		</div>
 	</body>
