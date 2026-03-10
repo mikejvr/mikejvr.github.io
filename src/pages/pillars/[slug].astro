@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const pillars = await getCollection('pillars');
+  return pillars.map(pillar => ({
+    params: { slug: pillar.id },
+    props: { pillar },
+  }));
+}
+
+const { pillar } = Astro.props;
+const { Content } = await render(pillar);
+---
+
+<Layout title={pillar.data.title}>
+  <article>
+    <h1>{pillar.data.title}</h1>
+    <p>{pillar.data.focus}</p>
+    <div class="content">
+      <Content />
+    </div>
+    <a href="/">← Back to NEXUS</a>
+  </article>
+</Layout>
