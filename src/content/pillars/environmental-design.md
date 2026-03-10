@@ -1,5 +1,6 @@
 ---
 title: "Large-Scale & Environmental Design"
+pillar: "environmental-design"
 focus: "High-impact physical assets and spatial marketing."
 tags: ["EnvironmentalDesign", "Signage", "PrintProduction", "RetailPackaging"]
 order: 3

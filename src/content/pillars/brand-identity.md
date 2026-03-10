@@ -1,5 +1,6 @@
 ---
 title: "Brand Identity & Systems"
+pillar: "brand-identity"
 focus: "Foundation, visual language, and consistency."
 tags: ["BrandStrategy", "LogoDesign", "CorporateIdentity", "StationerySystems"]
 order: 1
