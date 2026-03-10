@@ -2,7 +2,6 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/MainLayout.astro';
 
-// 1. Generate paths for all 5 pillars
 export async function getStaticPaths() {
   const pillars = await getCollection('pillars');
   return pillars.map(entry => ({
@@ -11,51 +10,175 @@ export async function getStaticPaths() {
   }));
 }
 
-// 2. Get the specific data for the current page
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout title={`${entry.data.title} | NEXUS Case Study`}>
+<Layout title={`${entry.data.title} | NEXUS`}>
   <article class="case-study">
     <header class="project-header">
-      <span class="category-tag">PROJECT PILLAR // 0{entry.data.order}</span>
+      <div class="meta-row">
+        <span class="category-tag">SYSTEM_PILLAR // 0{entry.data.order}</span>
+        <span class="status-indicator">STATUS: ACTIVE_CASE_STUDY</span>
+      </div>
       <h1>{entry.data.title}</h1>
-      <p class="subtitle">{entry.data.focus}</p>
+      <p class="focus-statement">{entry.data.focus}</p>
     </header>
 
-    <section class="overview">
-      <div class="content-block">
-        <Content /> 
-      </div>
-    </section>
+    <div class="nexus-rule"></div>
 
-    <section class="featured-work">
-      <h2>Featured Clients & Projects</h2>
-      <div class="client-list">
-        {entry.body}
-      </div>
+    <section class="markdown-content">
+      <Content /> 
     </section>
     
     <footer class="project-footer">
       <div class="tags">
         {entry.data.tags.map(tag => <span class="tag">#{tag}</span>)}
       </div>
-      <a href="/" class="back-link">← RETURN TO SYSTEMS OVERVIEW</a>
+      <a href="/" class="back-link">
+        <span class="arrow">←</span> RETURN TO SYSTEMS OVERVIEW
+      </a>
     </footer>
   </article>
 </Layout>
 
 <style>
-  /* Use your brand colors from the home page */
-  .case-study {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
+  :root {
+    /* Identical Design Tokens from index.astro */
+    --nexus-purple: #2D1B69;
+    --nexus-orange: #FF6B35;
+    --nexus-gradient: linear-gradient(135deg, #2D1B69 0%, #FF6B35 100%);
+    
+    --pillar-blue: #005A9C;
+    --pillar-teal: #00A896;
+    --pillar-red: #C8102E;
+
+    --font-brand: 'Michroma', sans-serif;
+    --font-tagline: 'Saira Extra Condensed', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    
+    --bg-dark: #0a0a0c;
+    --text-light: #f4f4f9;
   }
-  h1 { font-family: 'Michroma', sans-serif; color: #f4f4f9; }
-  .subtitle { font-family: 'Saira Extra Condensed', sans-serif; font-weight: 200; color: #FF6B35; letter-spacing: 2px; }
-  .client-list { font-family: 'Roboto Mono', monospace; font-size: 0.9rem; color: #aaa; border-left: 1px solid #2D1B69; padding-left: 20px; }
-  .tag { color: #00A896; margin-right: 15px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; }
-  .back-link { display: block; margin-top: 60px; color: #FF6B35; text-decoration: none; font-family: 'Michroma', sans-serif; font-size: 0.7rem; }
+
+  /* Global Page Infrastructure */
+  body {
+    background-color: var(--bg-dark);
+    
+    /* The NEXUS Structural Grid - Replicated from index.astro */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center top;
+    background-attachment: fixed; /* Keeps grid static while scrolling */
+    
+    color: var(--text-light);
+    font-family: var(--font-tagline);
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .case-study {
+    max-width: 1000px; /* Matches home page container */
+    margin: 0 auto;
+    padding: 80px 20px;
+  }
+
+  /* Header Systems */
+  .project-header {
+    margin-bottom: 60px;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: var(--font-brand);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0;
+    background: var(--nexus-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+  }
+
+  .focus-statement {
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-top: 10px;
+  }
+
+  .nexus-rule {
+    height: 1px;
+    background: linear-gradient(to right, var(--nexus-purple), var(--nexus-orange), transparent);
+    margin: 40px 0;
+    border: 0;
+  }
+
+  /* Markdown Content Styling */
+  .markdown-content :global(h3) {
+    font-family: var(--font-brand);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin: 60px 0 20px 0;
+    letter-spacing: 1px;
+  }
+
+  .markdown-content :global(p) {
+    font-size: 1.2rem;
+    color: #aaa;
+    max-width: 75ch; /* Optimized readability */
+  }
+
+  .markdown-content :global(blockquote) {
+    background: rgba(255,255,255,0.03);
+    padding: 40px;
+    border-left: 2px solid var(--nexus-orange);
+    margin: 60px 0;
+    font-style: italic;
+  }
+
+  /* Footer Systems */
+  .project-footer {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--nexus-orange);
+    margin-right: 25px;
+    letter-spacing: 1px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 60px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .back-link:hover {
+    opacity: 1;
+    color: var(--nexus-orange);
+  }
 </style>
