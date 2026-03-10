@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<Layout title={`${project.data.title} | NEXUS Case Study`}>
+  <article class="case-study">
+    <h1>{project.data.title}</h1>
+    <section class="project-content">
+      <Content />
+    </section>
+    <a href={`/pillars/${project.data.pillar}`}>← BACK TO PILLAR</a>
+  </article>
+</Layout>
+
+<style>
+  /* Use your existing grid and theme variables here */
+  .case-study { max-width: 900px; margin: 80px auto; padding: 0 40px; }
+  h1 { font-family: var(--font-brand); color: var(--nexus-orange); }
+</style>
