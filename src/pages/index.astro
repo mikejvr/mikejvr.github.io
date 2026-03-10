@@ -253,14 +253,21 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 
 		<div class="portfolio-grid">
 			{pillarsWithContent.map(pillar => {
-				let accent = "var(--pillar-blue)";
-				if (pillar.data.title.includes("Digital") || pillar.data.title.includes("Web")) accent = "var(--pillar-teal)";
-				if (pillar.data.title.includes("Brand") || pillar.data.title.includes("Publication")) accent = "var(--pillar-red)";
+				// Define your color map
+				const colors = {
+					"Brand Identity & Systems": "var(--pillar-red)",
+					"Web Infrastructure": "var(--pillar-teal)",
+					"Publication Design": "var(--pillar-red)",
+					"Technical Illustration": "var(--pillar-blue)",
+					"Environmental Design": "var(--pillar-blue)"
+				};
+				
+				const accent = colors[pillar.data.title] || "var(--pillar-blue)";
 
 				return (
 					<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
 						<span class="pillar-category" style={`color: ${accent}`}>
-							// {pillar.data.title.toUpperCase()}
+							{pillar.data.title.toUpperCase()}
 						</span>
 						<h3>{pillar.data.focus}</h3>
 						<div class="content">
