@@ -2,25 +2,60 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/MainLayout.astro';
 
+// 1. Generate paths for all 5 pillars
 export async function getStaticPaths() {
   const pillars = await getCollection('pillars');
-  return pillars.map(pillar => ({
-    params: { slug: pillar.id },
-    props: { pillar },
+  return pillars.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
   }));
 }
 
-const { pillar } = Astro.props;
-const { Content } = await render(pillar);
+// 2. Get the specific data for the current page
+const { entry } = Astro.props;
+const { Content } = await render(entry);
 ---
 
-<Layout title={pillar.data.title}>
-  <article>
-    <h1>{pillar.data.title}</h1>
-    <p>{pillar.data.focus}</p>
-    <div class="content">
-      <Content />
-    </div>
-    <a href="/">← Back to NEXUS</a>
+<Layout title={`${entry.data.title} | NEXUS Case Study`}>
+  <article class="case-study">
+    <header class="project-header">
+      <span class="category-tag">PROJECT PILLAR // 0{entry.data.order}</span>
+      <h1>{entry.data.title}</h1>
+      <p class="subtitle">{entry.data.focus}</p>
+    </header>
+
+    <section class="overview">
+      <div class="content-block">
+        <Content /> 
+      </div>
+    </section>
+
+    <section class="featured-work">
+      <h2>Featured Clients & Projects</h2>
+      <div class="client-list">
+        {entry.body}
+      </div>
+    </section>
+    
+    <footer class="project-footer">
+      <div class="tags">
+        {entry.data.tags.map(tag => <span class="tag">#{tag}</span>)}
+      </div>
+      <a href="/" class="back-link">← RETURN TO SYSTEMS OVERVIEW</a>
+    </footer>
   </article>
 </Layout>
+
+<style>
+  /* Use your brand colors from the home page */
+  .case-study {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  h1 { font-family: 'Michroma', sans-serif; color: #f4f4f9; }
+  .subtitle { font-family: 'Saira Extra Condensed', sans-serif; font-weight: 200; color: #FF6B35; letter-spacing: 2px; }
+  .client-list { font-family: 'Roboto Mono', monospace; font-size: 0.9rem; color: #aaa; border-left: 1px solid #2D1B69; padding-left: 20px; }
+  .tag { color: #00A896; margin-right: 15px; font-family: 'Roboto Mono', monospace; font-size: 0.8rem; }
+  .back-link { display: block; margin-top: 60px; color: #FF6B35; text-decoration: none; font-family: 'Michroma', sans-serif; font-size: 0.7rem; }
+</style>
