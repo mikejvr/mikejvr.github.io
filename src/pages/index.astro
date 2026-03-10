@@ -18,8 +18,16 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>NEXUS | Technical Design & Creative Systems</title>
+		
+		<meta name="description" content="NEXUS provides full-service design infrastructure, bridging the gap between creative vision and technical execution through brand identity, web infrastructure, and high-fidelity technical illustration." />
+		<meta name="author" content="NEXUS" />
+		
+		<meta property="og:title" content="NEXUS | Technical Design & Creative Systems" />
+		<meta property="og:description" content="Bridging the gap between creative vision and technical execution." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mikejvr.github.io/" />
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,6 +183,11 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				0%, 100% { transform: scale(1); opacity: 0.6; }
 				50% { transform: scale(1.05); opacity: 1; }
 			}
+			@media (prefers-reduced-motion: reduce) {
+				.circuit-segment, .nexus-node {
+					animation: none;
+				}
+			}
 			.brand-logo-svg {
 				width: 140px;
 				height: auto;
@@ -258,18 +271,19 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				const accent = getAccent(pillar.data.title);
 
 				return (
-					<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
-						<span class="pillar-category" style={`color: ${accent}`}>
-							{pillar.data.title.toUpperCase()}
-						</span>
-						<h3>{pillar.data.focus}</h3>
-						<div class="content">
-							<pillar.Content />
-						</div>
-					</div>
-				);
-			})}
-		</div>
+						<a href={`/pillars/${pillar.id}`} style="text-decoration: none; color: inherit;">
+							<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
+								<span class="pillar-category" style={`color: ${accent}`}>
+									{pillar.data.title.toUpperCase()}
+								</span>
+								<h3>{pillar.data.focus}</h3>
+								<div class="content">
+									<pillar.Content />
+								</div>
+							</div>
+						</a>
+					);
+				})}
 
 		<footer class="structural-summary">
 			<hr class="nexus-rule" />
