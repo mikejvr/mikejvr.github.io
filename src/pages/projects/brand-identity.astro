@@ -1,30 +1,29 @@
 ---
-// src/pages/projects/brand-identity.astro
+import { getEntry } from 'astro:content';
 import Layout from '../../layouts/MainLayout.astro';
+
+// 1. Fetch the specific entry
+const brandEntry = await getEntry('pillars', 'brand-identity');
+const { Content } = await brandEntry.render();
 ---
 
-<Layout title="Brand Identity | NEXUS Case Study">
+<Layout title={`${brandEntry.data.title} | NEXUS Case Study`}>
   <article class="case-study">
-    <h1>Brand Identity & Systems</h1>
-    <p class="subtitle">Foundation, visual language, and consistency.</p>
+    <h1>{brandEntry.data.title}</h1>
+    <p class="subtitle">{brandEntry.data.focus}</p>
 
     <section class="overview">
-      <h2>The Challenge</h2>
-      <p>Transforming complex organizational needs into cohesive visual systems that scale across digital and physical environments.</p>
-    </section>
-
-    <section class="process">
-      <h2>Strategic Approach</h2>
-      <ul>
-        <li><strong>Research:</strong> Auditing existing market positioning.</li>
-        <li><strong>Systematization:</strong> Developing modular design tokens.</li>
-        <li><strong>Implementation:</strong> Defining guidelines for corporate identity and stationery.</li>
-      </ul>
+      <h2>The Goal</h2>
+      <Content /> 
     </section>
 
     <section class="featured-work">
-      <h2>Featured Clients</h2>
-      <p>Ascendant Group, Amathemba, At Home Vet Care, Chameleon, Dudu-Bervely, and more.</p>
+      <h2>Featured Clients & Projects</h2>
+      <p>{brandEntry.body}</p> 
+    </section>
+    
+    <section class="tags">
+      {brandEntry.data.tags.map(tag => <span>#{tag} </span>)}
     </section>
   </article>
 </Layout>
