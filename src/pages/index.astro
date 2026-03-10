@@ -45,12 +45,24 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 
 			body {
 				background-color: var(--bg-dark);
+				
+				/* The NEXUS Structural Grid */
+				background-image: 
+					linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+				background-size: 40px 40px; /* The scale of the grid squares */
+				background-position: center top;
+				
 				color: var(--text-light);
 				font-family: var(--font-tagline);
 				max-width: 1000px;
 				margin: 0 auto;
 				padding: 0 20px;
 				line-height: 1.6;
+				
+				/* Smooth rendering for technical precision */
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
 			}
 
 			/* Header Styles */
@@ -58,6 +70,19 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				text-align: center;
 				padding: 100px 20px;
 				border-bottom: 1px solid rgba(255,255,255,0.1);
+			}
+			.logo-container {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 20px;
+			}
+
+			.brand-logo {
+				width: 120px; /* Adjust based on your preference */
+				height: auto;
+				/* If using the dark-mode version on a dark background, 
+					ensure your PNG has a transparent background */
+				filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.2)); /* Subtle Orange Glow */
 			}
 			.brand-mark {
 				font-family: var(--font-brand);
@@ -72,6 +97,7 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				font-size: 3.5rem;
 				margin: 0;
 				letter-spacing: 1rem;
+				line-height: 1.2;
 			}
 			.tagline {
 				font-family: var(--font-tagline);
@@ -100,11 +126,13 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 			}
 
 			.pillar-card {
-				background: rgba(255,255,255,0.02);
+				background: rgba(10, 10, 12, 0.8); /* Slightly transparent dark background */
+				backdrop-filter: blur(10px); /* Creates a frosted glass effect over the grid */
 				border: 1px solid rgba(255,255,255,0.05);
-				padding: 30px;
+				padding: 40px;
 				border-radius: 4px;
 				transition: all 0.3s ease;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Depth shadow */
 			}
 
 			.pillar-card:hover {
@@ -118,6 +146,40 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				letter-spacing: 0.2rem;
 				display: block;
 				margin-bottom: 10px;
+			}
+			/* 1. Target the nodes in the SVG */
+			.nexus-node {
+				fill: #FF6B35; /* Electric Orange */
+				filter: drop-shadow(0 0 5px #FF6B35);
+				animation: circuitPulse 4s infinite ease-in-out;
+				transform-origin: center;
+				}
+
+			/* Staggered timing for technical complexity */
+			.nexus-node:nth-child(even) { animation-delay: 2s; }
+
+				@keyframes circuitPulse {
+				0%, 100% {
+					opacity: 0.8;
+					transform: scale(1);
+					filter: drop-shadow(0 0 5px #FF6B35);
+				}
+				50% {
+					opacity: 1;
+					transform: scale(1.15); /* Subtle expansion */
+					filter: drop-shadow(0 0 15px #FF6B35);
+				}
+			}
+
+			.brand-logo-svg {
+				width: 140px;
+				height: auto;
+				margin-bottom: 20px;
+				transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+
+			.logo-container:hover .brand-logo-svg {
+				transform: scale(1.05);
 			}
 
 			h3 { font-family: var(--font-brand); font-size: 1.2rem; margin: 10px 0; }
@@ -135,11 +197,19 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 	</head>
 	<body>
 		<header class="nexus-header">
-			<div class="brand-mark">N</div>
+			<div class="logo-container">
+				<svg class="brand-logo-svg" viewBox="0 0 825 1513" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="407" cy="41" r="41" class="nexus-node" />
+					<circle cx="259" cy="266" r="31" class="nexus-node" />
+					<circle cx="490" cy="471" r="25" class="nexus-node" />
+					<circle cx="410" cy="1472" r="41" class="nexus-node" />
+					<circle cx="557" cy="1314" r="31" class="nexus-node" />
+					<circle cx="337" cy="1124" r="25" class="nexus-node" />
+				</svg>
+			</div>
 			<h1 class="brand-name">NEXUS</h1>
 			<p class="tagline">TECHNICAL DESIGN & CREATIVE SYSTEMS</p>
-		</header>
-		
+		</header>		
 		<section class="expertise">
 			<p>{expertiseStory}</p>
 		</section>
