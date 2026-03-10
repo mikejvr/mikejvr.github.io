@@ -1,14 +1,18 @@
 ---
 import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/MainLayout.astro';
 
 export async function getStaticPaths() {
   const pillars = await getCollection('pillars');
   return pillars.map(entry => ({
     params: { slug: entry.id },
-    props: { entry },
+    props: { entry }, // This passes 'entry' to the page
   }));
 }
 
+const { entry } = Astro.props; 
+
+const { Content } = await render(entry);
 const allProjects = await getCollection('projects');
 const projectsInPillar = allProjects.filter(p => p.data.pillar === entry.id);
 ---
@@ -28,9 +32,9 @@ const projectsInPillar = allProjects.filter(p => p.data.pillar === entry.id);
 
     <section class="project-grid">
       {projectsInPillar.map(project => (
-        <a href={`/projects/${project.id}`} class="project-card">
+        <a href={`/projects/${project.id}`} class="pillar-card" style="text-decoration: none;">
           <h3>{project.data.title}</h3>
-          <p>{project.data.description}</p>
+          <p style="color: #aaa;">{project.data.description}</p>
         </a>
       ))}
     </section>
