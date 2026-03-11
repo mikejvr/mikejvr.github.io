@@ -105,6 +105,13 @@ h1.brand-name {
     border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Depth shadow */
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .pillar-card:hover {
@@ -179,3 +186,27 @@ h3 { font-family: var(--font-brand); font-size: 1.2rem; margin: 10px 0; }
 .spec-item .label { color: var(--nexus-orange); margin-right: 8px; }
 .spec-item .value { color: #888; }
 .copyright { font-family: var(--font-tagline); text-transform: uppercase; letter-spacing: 0.3rem; margin-top: 60px; opacity: 0.3; }
+
+.audit-cta {
+    margin: 100px 0;
+    padding: 60px;
+    border: 1px solid var(--nexus-orange);
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255,107,53,0.05), transparent);
+}
+
+.audit-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: var(--nexus-orange);
+    color: var(--bg-dark);
+    font-family: var(--font-brand);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.audit-button:hover {
+    transform: scale(1.05);
+}
