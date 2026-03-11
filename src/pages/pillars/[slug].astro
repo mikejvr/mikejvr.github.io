@@ -21,14 +21,31 @@ const projectsInPillar = allProjects.filter(p => p.data.pillar === entry.id);
   <article class="case-study">
     <header class="project-header">
       <div class="meta-row">
-        <span class="category-tag">SYSTEM_PILLAR // 0{entry.data.order}</span>
-        <span class="status-indicator">STATUS: ACTIVE_CASE_STUDY</span>
+        <span class="category-tag">SYSTEM_CATEGORIZATION // 0{entry.data.order}</span>
+        <span class="status-indicator">STATUS: SYSTEM_SUMMARY</span>
       </div>
       <h1>{entry.data.title}</h1>
       <p class="focus-statement">{entry.data.focus}</p>
     </header>
 
     <div class="nexus-rule"></div>
+
+    <section class="pillar-meta">
+      <div class="meta-grid">
+        <div class="meta-box">
+          <span class="meta-label">CORE FOCUS</span>
+          <span class="meta-value">Brand Strategy</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-label">DELIVERABLES</span>
+          <span class="meta-value">Identity / Guidelines / Assets</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-label">SYSTEM SCALE</span>
+          <span class="meta-value">14+ PROJECTS</span>
+        </div>
+      </div>
+    </section>
 
     <section class="project-grid">
       {projectsInPillar.map(project => (
@@ -62,4 +79,9 @@ const projectsInPillar = allProjects.filter(p => p.data.pillar === entry.id);
   .tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--nexus-orange); margin-right: 25px; letter-spacing: 1px; }
   .back-link { display: inline-block; margin-top: 60px; color: var(--text-light); text-decoration: none; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; opacity: 0.5; transition: opacity 0.3s ease; }
   .back-link:hover { opacity: 1; color: var(--nexus-orange); }
+  .pillar-meta { margin: 40px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .meta-box { display: flex; flex-direction: column; }
+  .meta-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--nexus-orange); letter-spacing: 2px; }
+  .meta-value { font-family: var(--font-tagline); font-size: 1.1rem; color: var(--text-light); }
 </style>

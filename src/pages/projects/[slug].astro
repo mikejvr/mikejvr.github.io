@@ -16,7 +16,17 @@ const { Content } = await render(project);
 
 <Layout title={`${project.data.title} | NEXUS Case Study`}>
   <article class="case-study">
-    <h1>{project.data.title}</h1>
+    <header class="project-header">
+      <div class="meta-row">
+        <span class="category-tag">PROJECT_CASE_STUDY // 0{entry.data.order}</span>
+        <span class="status-indicator">STATUS: COMPLETED</span>
+      </div>
+      <h1>{project.data.title}</h1>
+      <p class="focus-statement">{entry.data.focus}</p>
+    </header>
+
+    <div class="nexus-rule"></div>
+
     <section class="project-content markdown-content">
       <Content />
     </section>
