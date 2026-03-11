@@ -36,7 +36,9 @@ const { Content } = await render(project);
 
 <style>
   .case-study { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
-  
+  .project-header { margin-bottom: 60px; }
+  .meta-row { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px; margin-bottom: 20px; }
+
   h1 { 
     font-family: var(--font-brand); 
     font-size: clamp(2rem, 5vw, 3.5rem); 
@@ -47,12 +49,22 @@ const { Content } = await render(project);
   }
 
   .project-content { line-height: 1.8; }
-  
+  .focus-statement { font-size: 1.4rem; font-weight: 200; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5rem; margin-top: 10px; }
+  .nexus-rule { height: 1px; background: linear-gradient(to right, var(--nexus-purple), var(--nexus-orange), transparent); margin: 40px 0; border: 0; }
+  .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .project-footer { margin-top: 100px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--nexus-orange); margin-right: 25px; letter-spacing: 1px; }
   .markdown-content :global(p) { font-size: 1.1rem; color: #aaa; margin-bottom: 20px; }
   .markdown-content :global(img) { max-width: 100%; border-radius: 4px; margin: 20px 0; }
-  
   .back-link { 
     display: inline-block; margin-top: 60px; color: var(--nexus-orange); 
     text-decoration: none; font-family: var(--font-mono); font-size: 0.8rem; 
   }
+  .back-link:hover { opacity: 1; color: var(--nexus-orange); }
+  .pillar-meta { margin: 40px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .meta-box { display: flex; flex-direction: column; }
+  .meta-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--nexus-orange); letter-spacing: 2px; }
+  .meta-value { font-family: var(--font-tagline); font-size: 1.1rem; color: var(--text-light); }
+
 </style>
