@@ -1,0 +1,181 @@
+:root {
+    --nexus-purple: #2D1B69;
+    --nexus-orange: #FF6B35;
+    --nexus-gradient: linear-gradient(135deg, #2D1B69 0%, #FF6B35 100%);
+    
+    --pillar-blue: #005A9C;
+    --pillar-teal: #00A896;
+    --pillar-red: #C8102E;
+
+    --font-brand: 'Michroma', sans-serif;
+    --font-tagline: 'Saira Extra Condensed', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+    
+    --bg-dark: #0a0a0c;
+    --text-light: #f4f4f9;
+}
+
+body {
+    background-color: var(--bg-dark);
+    
+    /* The NEXUS Structural Grid */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px; /* The scale of the grid squares */
+    background-position: center top;
+    
+    color: var(--text-light);
+    font-family: var(--font-tagline);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    
+    /* Smooth rendering for technical precision */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Styles */
+.nexus-header {
+    text-align: center;
+    padding: 100px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    width: 120px; /* Adjust based on your preference */
+    height: auto;
+    /* If using the dark-mode version on a dark background, 
+        ensure your PNG has a transparent background */
+    filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.2)); /* Subtle Orange Glow */
+}
+.brand-mark {
+    font-family: var(--font-brand);
+    font-size: 5rem;
+    background: var(--nexus-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+h1.brand-name {
+    font-family: var(--font-brand);
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 1rem;
+    line-height: 1.2;
+}
+.tagline {
+    font-family: var(--font-tagline);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+}
+
+/* Content Sections */
+.expertise {
+    font-family: var(--font-tagline);
+    font-size: 1.4rem;
+    font-weight: 300;
+    background: rgba(255,255,255,0.03);
+    padding: 40px;
+    border-left: 2px solid var(--nexus-orange);
+    margin: 60px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.pillar-card {
+    background: rgba(10, 10, 12, 0.8); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px); /* Creates a frosted glass effect over the grid */
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Depth shadow */
+}
+
+.pillar-card:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateX(10px);
+}
+
+.pillar-category {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 1. Target the nodes in the SVG */
+    .nexus-node {
+        fill: #FF6B35;
+        filter: drop-shadow(0 0 8px #FF6B35);
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+.circuit-segment {
+    animation: circuitPulse 3s infinite ease-in-out;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+/* Staggering the segments creates the "Wave" effect */
+.circuit-segment:nth-child(1) { animation-delay: 0s; }
+.circuit-segment:nth-child(2) { animation-delay: 0.5s; }
+.circuit-segment:nth-child(3) { animation-delay: 1.0s; }
+.circuit-segment:nth-child(4) { animation-delay: 1.5s; }
+.circuit-segment:nth-child(5) { animation-delay: 2.0s; }
+.circuit-segment:nth-child(6) { animation-delay: 2.5s; }
+
+
+@keyframes circuitPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .circuit-segment, .nexus-node {
+        animation: none;
+    }
+}
+.brand-logo-svg {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-container:hover .brand-logo-svg {
+    transform: scale(1.05);
+}
+
+.fil0 { fill: #FF6B35; } /* Vibrant Electric Orange */
+.fil1 { fill: #2D1B69; } /* Deep Tech Purple */
+.fil2 { fill: #FF6B35; } /* Nodes (Orange) */
+
+
+h3 { font-family: var(--font-brand); font-size: 1.2rem; margin: 10px 0; }
+
+.content { font-size: 0.95rem; color: #aaa; }
+
+/* Footer Styles */
+.structural-summary { margin-top: 120px; padding-bottom: 60px; font-family: var(--font-mono); font-size: 0.75rem; color: #444; }
+.nexus-rule { border: 0; height: 1px; background: linear-gradient(to right, var(--nexus-purple), var(--nexus-orange), transparent); margin-bottom: 40px; }
+.specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.spec-item .label { color: var(--nexus-orange); margin-right: 8px; }
+.spec-item .value { color: #888; }
+.copyright { font-family: var(--font-tagline); text-transform: uppercase; letter-spacing: 0.3rem; margin-top: 60px; opacity: 0.3; }
