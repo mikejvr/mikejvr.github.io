@@ -25,13 +25,13 @@ I treated the rebrand not as a styling exercise, but as an **infrastructure proj
 ### Project Log: Executed Deliverables
 Each project within the Ascendant Group ecosystem was engineered to solve a specific conversion challenge.
 
-| Project | | | | Pillar | | | | Strategic Angle |
-| :--- | | | | :--- | | | | :--- |
-| **CEO/Exec Branding** | | | | Brand Identity | | | | Crafting visual authority for C-suite leaders. |
-| **Leading High Performers** | | | | Publication Design | | | | Translating high-level theory into a fluid 200-page experience. |
-| **Dr. Del Rosario** | | | | Brand Strategy | | | | Bridging market strategy with actionable sales tools. |
-| **H360 / H. Griggs** | | | | Editorial Design | | | | Visualizing impact through clean, persuasive documentation. |
-| **Omar Tyree** | | | | Conversion Design | | | | Supporting author tours with collateral that drives growth. |
+| Project | Pillar | Strategic Angle |
+| :--- | :--- | :--- |
+| **CEO/Exec Branding** | Brand Identity | Crafting visual authority for C-suite leaders. |
+| **Leading High Performers** | Publication Design | Translating high-level theory into a fluid 200-page experience. |
+| **Dr. Del Rosario** | Brand Strategy | Bridging market strategy with actionable sales tools. |
+| **H360 / H. Griggs** | Editorial Design | Visualizing impact through clean, persuasive documentation. |
+| **Omar Tyree** | Conversion Design | Supporting author tours with collateral that drives growth. |
 
 > "I focused on building systems that did more than look good; they were designed to command authority, educate audiences, and drive direct engagement for my clients' brands."
 
