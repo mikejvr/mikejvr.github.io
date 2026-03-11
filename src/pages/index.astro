@@ -14,65 +14,6 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 ---
 
 <MainLayout title="Technical Design & Creative Systems">
-	<header class="nexus-header">
-		<h1 class="brand-name">NEXUS</h1>
-		<p class="tagline">TECHNICAL DESIGN & CREATIVE SYSTEMS</p>
-	</header>
-
-	<section class="expertise">
-		<p>{expertiseStory}</p>
-	</section>
-
-	<div class="portfolio-grid">
-			{pillarsWithContent.map(pillar => {
-				const getAccent = (title) => {
-					if (title.includes("Brand") || title.includes("Publication")) return "var(--pillar-red)";
-					if (title.includes("Web") || title.includes("Digital")) return "var(--pillar-teal)";
-					if (title.includes("Technical") || title.includes("Environmental")) return "var(--pillar-blue)";
-					return "var(--pillar-blue)";
-				};
-
-				const accent = getAccent(pillar.data.title);
-
-				return (
-					<a href={`/pillars/${pillar.id}`} style="text-decoration: none; color: inherit;">
-						<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
-							<span class="pillar-category" style={`color: ${accent}`}>
-								{pillar.data.title.toUpperCase()}
-							</span>
-							<h3>{pillar.data.focus}</h3>
-							<div class="content">
-								<pillar.Content />
-							</div>
-						</div>
-					</a>
-				);
-			})}
-		</div>
-	<footer class="structural-summary">
-	</footer>
-</MainLayout>
-
-"""<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>NEXUS | Technical Design & Creative Systems</title>
-		
-		<meta name="description" content="NEXUS provides full-service design infrastructure, bridging the gap between creative vision and technical execution through brand identity, web infrastructure, and high-fidelity technical illustration." />
-		<meta name="author" content="NEXUS" />
-		
-		<meta property="og:title" content="NEXUS | Technical Design & Creative Systems" />
-		<meta property="og:description" content="Bridging the gap between creative vision and technical execution." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://mikejvr.github.io/" />
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto+Mono:wght@300;400&family=Saira+Extra+Condensed:wght@200;300;400&display=swap" rel="stylesheet">
-
-	</head>
-	<body>
 		<header class="nexus-header">
 			<div class="logo-container">
 				<svg class="brand-logo-svg" viewBox="0 0 825 1513" overflow="visible" xmlns="http://www.w3.org/2000/svg">
@@ -110,11 +51,12 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 			<h1 class="brand-name">NEXUS</h1>
 			<p class="tagline">TECHNICAL DESIGN & CREATIVE SYSTEMS</p>
 		</header>		
-		<section class="expertise">
-			<p>{expertiseStory}</p>
-		</section>
 
-		<div class="portfolio-grid">
+	<section class="expertise">
+		<p>{expertiseStory}</p>
+	</section>
+
+	<div class="portfolio-grid">
 			{pillarsWithContent.map(pillar => {
 				const getAccent = (title) => {
 					if (title.includes("Brand") || title.includes("Publication")) return "var(--pillar-red)";
@@ -126,35 +68,33 @@ const expertiseStory = "I bridge the gap between creative vision and technical e
 				const accent = getAccent(pillar.data.title);
 
 				return (
-						<a href={`/pillars/${pillar.id}`} style="text-decoration: none; color: inherit;">
-							<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
-								<span class="pillar-category" style={`color: ${accent}`}>
-									{pillar.data.title.toUpperCase()}
-								</span>
-								<h3>{pillar.data.focus}</h3>
-								<div class="content">
-									<pillar.Content />
-								</div>
+					<a href={`/pillars/${pillar.id}`} style="text-decoration: none; color: inherit;">
+						<div class="pillar-card" style={`border-left: 2px solid ${accent}`}>
+							<span class="pillar-category" style={`color: ${accent}`}>
+								{pillar.data.title.toUpperCase()}
+							</span>
+							<h3>{pillar.data.focus}</h3>
+							<div class="content">
+								<pillar.Content />
 							</div>
-						</a>
-					);
-				})}
-
+						</div>
+					</a>
+				);
+			})}
+		</div>
 		<section class="audit-cta">
 			<h3>READY TO ENGINEER YOUR SYSTEM?</h3>
 			<p>Every brand requires a stable, logical foundation. Let's perform a technical audit of your current visual assets and infrastructure.</p>
 			<a href="mailto:your@email.com" class="audit-button">REQUEST SYSTEM AUDIT</a>
 		</section>
-
-		<footer class="structural-summary">
-			<hr class="nexus-rule" />
-			<div class="specs-grid">
-				<div class="spec-item"><span class="label">BUILD:</span><span class="value">STABLE // PROD</span></div>
-				<div class="spec-item"><span class="label">ENGINE:</span><span class="value">ASTRO_V4_STATIC</span></div>
-				<div class="spec-item"><span class="label">PIPELINE:</span><span class="value">GH_ACTIONS_DEPLOY</span></div>
-				<div class="spec-item"><span class="label">LOCATION:</span><span class="value">ATX_USA // 30.2672° N, 97.7431° W</span></div>
-			</div>
-			<p class="copyright">© 2026 NEXUS | ALL RIGHTS RESERVED.</p>
-		</footer>
-	</body>
-</html>"""
+	<footer class="structural-summary">
+		<hr class="nexus-rule" />
+		<div class="specs-grid">
+			<div class="spec-item"><span class="label">BUILD:</span><span class="value">STABLE // PROD</span></div>
+			<div class="spec-item"><span class="label">ENGINE:</span><span class="value">ASTRO_V4_STATIC</span></div>
+			<div class="spec-item"><span class="label">PIPELINE:</span><span class="value">GH_ACTIONS_DEPLOY</span></div>
+			<div class="spec-item"><span class="label">LOCATION:</span><span class="value">ATX_USA // 30.2672° N, 97.7431° W</span></div>
+		</div>
+		<p class="copyright">© 2026 NEXUS | ALL RIGHTS RESERVED.</p>
+	</footer>
+</MainLayout>
