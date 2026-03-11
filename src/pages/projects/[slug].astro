@@ -18,11 +18,11 @@ const { Content } = await render(project);
   <article class="case-study">
     <header class="project-header">
       <div class="meta-row">
-        <span class="category-tag">PROJECT_CASE_STUDY // 0{entry.data.order}</span>
+        <span class="category-tag">PROJECT_CASE_STUDY // 0{project.data.order}</span>
         <span class="status-indicator">STATUS: COMPLETED</span>
       </div>
       <h1>{project.data.title}</h1>
-      <p class="focus-statement">{entry.data.focus}</p>
+      <p class="focus-statement">{project.data.focus}</p>
     </header>
 
     <div class="nexus-rule"></div>
