@@ -33,9 +33,20 @@ The project demanded a design system that could maintain precise medical-grade c
   </div>
   
   <div class="asset-column">
-    <NexusImage src="/assets/bd-vacutainer-600w.webp" alt="BD Vacutainer System Breakdown" />
-    <NexusImage src="/assets/bd-map-600w.webp" alt="BD Microtainer Product Family" />
-    <NexusImage src="/assets/bd-nsi-600w.webp" alt="Treating NSI Seriously Campaign" />
+    <a href="/assets/bd-vacutainer-1600w.webp" class="expand-trigger">
+      <img
+        src="/assets/bd-vacutainer-200w.webp" 
+        alt="BD Vacutainer System Breakdown" 
+        loading="lazy"
+        class="expand-trigger"
+ />
+    </a>
+    <a href="/assets/bd-map-1600w.webp" class="expand-trigger">
+      <img src="/assets/bd-map-200w.webp" alt="BD Microtainer Product Family" loading="lazy" />
+    </a>
+    <a href="/assets/bd-nsi-1600w.webp" class="expand-trigger">
+      <img src="/assets/bd-nsi-200w.webp" alt="Treating NSI Seriously Campaign" loading="lazy" />
+    </a>
   </div>
 </div>
 
@@ -57,12 +68,26 @@ I engineered a visual system that prioritized high-fidelity output and spatial l
   
   <div class="asset-column">
     <div class="visual-card">
-      <a href="/assets/bd-vacutainer-1600w.webp" target="_blank" class="expand-trigger">
-        <img src="/assets/bd-vacutainer-600w.webp" alt="Vacutainer Breakdown" loading="lazy" />
-      </a>
+      <div class="text-column">
+        <p><strong>Environmental Infrastructure:</strong> I designed and managed the production of large-format assets, ensuring color accuracy and typographic clarity across 3-meter dimensions.</p>
+      </div>
+      <div class="asset-column">
+        <a href="/assets/bd-vacutainer-1600w.webp" class="expand-trigger">
+          <img src="/assets/bd-vacutainer-600w.webp" alt="BD Vacutainer System Breakdown" loading="lazy" />
+        </a>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="split-layout">
+      <div class="text-column">
+        <p><strong>Digital-Physical Bridge:</strong> Developed a pop-up application that served as a digital gateway, allowing for real-time engagement and data collection.</p>
+      </div>
+      <div class="asset-column">
+        <a href="/assets/bd-map-1600w.webp" class="expand-trigger">
+          <img src="/assets/bd-map-600w.webp" alt="BD Microtainer Product Family" loading="lazy" />
+        </a>
+      </div>
+    </div>
 
 * **Environmental Infrastructure:** I designed and managed the production of large-format assets, including 3-meter banners and comprehensive signage systems that maintained color accuracy and typographic clarity.
 * **Digital-Physical Bridge:** Developed a pop-up application that served as a digital gateway within the physical space, allowing for real-time engagement and data collection.
