@@ -66,6 +66,7 @@ const { Content } = await render(project);
   .meta-box { display: flex; flex-direction: column; }
   .meta-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--nexus-orange); letter-spacing: 2px; }
   .meta-value { font-family: var(--font-tagline); font-size: 1.1rem; color: var(--text-light); }
+
   .visual-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -94,6 +95,25 @@ const { Content } = await render(project);
     filter: brightness(1.1);
   }
   .visual-card p { font-size: 0.75rem; margin-top: 15px; color: #aaa; }
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Text gets more space, images act as a visual anchor */
+    gap: 40px;
+    align-items: start;
+  }
+
+  .asset-column .visual-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .asset-column img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--nexus-orange); /* Adds that 'diagnostic' framing */
+  }
 
   /* Telemetry Table Styling */
   .telemetry-block table {

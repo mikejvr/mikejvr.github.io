@@ -26,6 +26,21 @@ The project demanded a design system that could maintain precise medical-grade c
 ### The Solution: Spatial Engineering
 I engineered a visual system that prioritized high-fidelity output and spatial logic, ensuring the "lifeblood" of the brand remained consistent across every touchpoint.
 
+<div class="split-layout">
+  <div class="text-column">
+    <p><strong>Environmental Infrastructure:</strong> I designed and managed the production of large-format assets, including 3-meter banners and signage systems that maintained color accuracy.</p>
+    <p><strong>Digital-Physical Bridge:</strong> Developed a pop-up application that served as a digital gateway, allowing for real-time engagement and data collection.</p>
+  </div>
+  
+  <div class="asset-column">
+    <div class="visual-card">
+      <a href="/assets/bd-vacutainer-1600w.webp" target="_blank" class="expand-trigger">
+        <img src="/assets/bd-vacutainer-600w.webp" alt="Vacutainer Breakdown" loading="lazy" />
+      </a>
+    </div>
+  </div>
+</div>
+
 * **Environmental Infrastructure:** I designed and managed the production of large-format assets, including 3-meter banners and comprehensive signage systems that maintained color accuracy and typographic clarity.
 * **Digital-Physical Bridge:** Developed a pop-up application that served as a digital gateway within the physical space, allowing for real-time engagement and data collection.
 * **System Cohesion:** By treating environmental design as an extension of technical infrastructure, I ensured that the brand's physical footprint was as robust and reliable as the diagnostic tools it represented.
@@ -44,7 +59,7 @@ To bridge the gap between complex medical diagnostics and patient-focused care, 
         sizes="(max-width: 768px) 500vw, 200px" 
         alt="BD Vacutainer System Breakdown" 
         loading="lazy"
-        style="cursor: zoom-in;"
+        class="expand-trigger"
       />
     </a>
     <p><strong>System Infrastructure:</strong> Technical breakdown of safety-valve functionality. Click to expand technical detail.</p>
@@ -55,10 +70,10 @@ To bridge the gap between complex medical diagnostics and patient-focused care, 
       <img 
         src="/assets/bd-map-600w.webp" 
         srcset="/assets/bd-map-600w.webp 600w, /assets/bd-map-1200w.webp 1200w" 
-        sizes="(max-width: 768px) 100vw, 400px" 
+        sizes="(max-width: 768px) 50vw, 200px" 
         alt="BD Microtainer Product Family" 
         loading="lazy"
-        style="cursor: zoom-in;"
+        class="expand-trigger"
       />
     </a>
     <p><strong>Clinical Product Hierarchy:</strong> Standardized visual language for diagnostic workflows. Click to expand technical detail.</p>
@@ -69,10 +84,10 @@ To bridge the gap between complex medical diagnostics and patient-focused care, 
       <img 
         src="/assets/bd-nsi-600w.webp" 
         srcset="/assets/bd-nsi-600w.webp 600w, /assets/bd-nsi-1200w.webp 1200w" 
-        sizes="(max-width: 768px) 100vw, 400px" 
+        sizes="(max-width: 768px) 50vw, 200px" 
         alt="Treating NSI Seriously Campaign" 
         loading="lazy"
-        style="cursor: zoom-in;"
+        class="expand-trigger"
       />
     </a>
     <p><strong>Campaign Governance:</strong> High-impact communication for safety-critical environments. Click to expand technical detail.</p>
