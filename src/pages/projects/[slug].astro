@@ -86,6 +86,13 @@ const { Content } = await render(project);
     /* This ensures the image doesn't look stretched or distorted */
     object-fit: contain; 
   }
+  .visual-card a img {
+    transition: transform 0.2s ease;
+  }
+  .visual-card a img:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
   .visual-card p { font-size: 0.75rem; margin-top: 15px; color: #aaa; }
 
   /* Telemetry Table Styling */

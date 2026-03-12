@@ -37,44 +37,46 @@ To bridge the gap between complex medical diagnostics and patient-focused care, 
 
 <div class="visual-grid">
   <div class="visual-card">
-    <img 
-      src="/assets/bd-vacutainer-600w.webp" 
-      srcset="/assets/bd-vacutainer-600w.webp 600w,
-              /assets/bd-vacutainer-1200w.webp 1200w,
-              /assets/bd-vacutainer-1600w.webp" 
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" 
-      alt="BD Vacutainer System Technical Breakdown" 
-      loading="lazy" 
-    />
-    <p><strong>System Infrastructure:</strong> Technical breakdown of safety-valve functionality.</p>
+    <a href="/assets/bd-vacutainer-1600w.webp" target="_blank" rel="noopener noreferrer">
+      <img 
+        src="/assets/bd-vacutainer-600w.webp" 
+        srcset="/assets/bd-vacutainer-600w.webp 600w, /assets/bd-vacutainer-1200w.webp 1200w" 
+        sizes="(max-width: 768px) 100vw, 400px" 
+        alt="BD Vacutainer System Breakdown" 
+        loading="lazy"
+        style="cursor: zoom-in;"
+      />
+    </a>
+    <p><strong>System Infrastructure:</strong> Technical breakdown of safety-valve functionality. Click to expand technical detail.</p>
   </div>
 
   <div class="visual-card">
-    <img 
-      src="/assets/bd-map-600w.webp," 
-      srcset="/assets/bd-map-600w.webp 600w,
-              /assets/bd-map-1200w.webp 1200w,
-              /assets/bd-map-1600w.webp 1600w" 
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" 
-      alt="BD Microtainer Product Family" 
-      loading="lazy" 
-    />
-    <p><strong>Clinical Product Hierarchy:</strong> Standardized visual language for diagnostic workflows.</p>
+    <a href="/assets/bd-map-1600w.webp" target="_blank" rel="noopener noreferrer">
+      <img 
+        src="/assets/bd-map-600w.webp" 
+        srcset="/assets/bd-map-600w.webp 600w, /assets/bd-map-1200w.webp 1200w" 
+        sizes="(max-width: 768px) 100vw, 400px" 
+        alt="BD Microtainer Product Family" 
+        loading="lazy"
+        style="cursor: zoom-in;"
+      />
+    </a>
+    <p><strong>Clinical Product Hierarchy:</strong> Standardized visual language for diagnostic workflows. Click to expand technical detail.</p>
   </div>
 
-  <div class="visual-card">
-    <img 
-      src="/assets/bd-nsi-600w.webp" 
-      srcset="/assets/bd-nsi-600w.webp 600w,
-              /assets/bd-nsi-1200w.webp 1200w,
-              /assets/bd-nsi-1600w.webp 1600w" 
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" 
-      alt="Treating NSI Seriously Campaign" 
-      loading="lazy" 
-    />
-    <p><strong>Campaign Governance:</strong> High-impact communication for safety-critical environments.</p>
+ <div class="visual-card">
+    <a href="/assets/bd-nsi-1600w.webp" target="_blank" rel="noopener noreferrer">
+      <img 
+        src="/assets/bd-nsi-600w.webp" 
+        srcset="/assets/bd-nsi-600w.webp 600w, /assets/bd-nsi-1200w.webp 1200w" 
+        sizes="(max-width: 768px) 100vw, 400px" 
+        alt="Treating NSI Seriously Campaign" 
+        loading="lazy"
+        style="cursor: zoom-in;"
+      />
+    </a>
+    <p><strong>Campaign Governance:</strong> High-impact communication for safety-critical environments. Click to expand technical detail.</p>
   </div>
-</div>
 
 <div class="telemetry-block">
 ### System Performance: Quantifiable Impact
