@@ -3,6 +3,8 @@ title: "BD Diagnostics"
 pillar: "environmental-design"
 description: "Large-scale physical infrastructure and immersive spatial marketing."
 order: 1
+tags: ["EnvironmentalDesign", "LargeFormat", "BrandActivation"]
+date: 2011-07-25
 ---
 
 <div class="telemetry-block">
