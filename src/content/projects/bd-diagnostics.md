@@ -15,15 +15,7 @@ date: 2011-07-25
 | **INFRASTRUCTURE** | `Environmental / Large-Scale Print` |
 | **STAKEHOLDER** | `Medical Diagnostics` |
 | **PEAK_SCALE** | `Pull-Up Banners / Pop-up Environmental Assets` |
-
 </div>
-
----
-title: "BD Diagnostics"
-pillar: "environmental-design"
-description: "Large-scale physical infrastructure and immersive spatial marketing."
-order: 1
----
 
 <div class="telemetry-block">
 | Metric | Value |
