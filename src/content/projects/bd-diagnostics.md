@@ -15,17 +15,15 @@ date: 2011-07-25
 | **INFRASTRUCTURE** | `Environmental / Large-Scale Print` |
 | **STAKEHOLDER** | `Medical Diagnostics` |
 | **PEAK_SCALE** | `Pull-Up Banners / Pop-up Environmental Assets` |
+
 </div>
 
-<div class="telemetry-block">
-| Metric | Value |
-| :--- | :--- |
-| **PROJECT_ID** | `BD_PHYS_SYS_03` |
-| **INFRASTRUCTURE** | `Environmental / Large-Scale Print` |
-</div>
+
 
 ### The Challenge
-BD Diagnostics required a high-impact physical presence. The primary friction was **Scale vs. Fidelity**: maintaining brand integrity while scaling assets from specialized collateral to 3-meter stadium banners.
+BD Diagnostics required a high-impact physical presence that could translate complex medical diagnostics into accessible, immersive environments. The primary friction was **Scale vs. Fidelity**: maintaining brand integrity while scaling assets from specialized collateral to 3-meter stadium banners and pop-up interactive applications.
+
+The project demanded a design system that could maintain precise medical-grade clarity across diverse physical dimensions.
 
 <div class="split-layout">
   <div class="text-column">
@@ -47,11 +45,6 @@ BD Diagnostics required a high-impact physical presence. The primary friction wa
 * **Scalability:** Standardized visual systems reduced the design iteration cycle by 50%.
 
 > "A design system is the vascular structure of a brand; when optimized, it ensures that critical safety information is delivered with absolute fidelity."
-
-### The Challenge
-BD Diagnostics required a high-impact physical presence that could translate complex medical diagnostics into accessible, immersive environments. The primary friction was **Scale vs. Fidelity**: maintaining brand integrity while scaling assets from specialized collateral to 3-meter stadium banners and pop-up interactive applications.
-
-The project demanded a design system that could maintain precise medical-grade clarity across diverse physical dimensions.
 
 ### The Solution: Spatial Engineering
 I engineered a visual system that prioritized high-fidelity output and spatial logic, ensuring the "lifeblood" of the brand remained consistent across every touchpoint.
