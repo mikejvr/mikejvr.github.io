@@ -3,6 +3,27 @@ import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
 ---
+
+<script>
+	const modal = document.getElementById("nexus-modal");
+	const modalImg = document.getElementById("modal-img");
+	const triggers = document.querySelectorAll(".expand-trigger");
+
+	triggers.forEach(trigger => {
+		trigger.addEventListener("click", (e) => {
+			e.preventDefault();
+			modal.style.display = "flex";
+			modalImg.src = trigger.href; 
+			console.log(`Telemetry: Asset expanded - ${trigger.querySelector('img').alt}`);
+		});
+	});
+
+	// Unified close logic
+	const closeModal = () => { modal.style.display = "none"; };
+	document.querySelector(".close-modal").onclick = closeModal;
+	modal.onclick = (e) => { if(e.target === modal) closeModal(); };
+</script>
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -16,5 +37,10 @@ const { title } = Astro.props;
 		<main>
 			<slot /> </main>
 		<Footer />
+	<div id="nexus-modal" class="modal">
+		<span class="close-modal">&times;</span>
+		<img class="modal-content" id="modal-img" />
+		<div id="caption"></div>
+	</div>
 	</body>
 </html>
