@@ -78,13 +78,13 @@ const { Content } = await render(project);
     border: 1px solid rgba(255,255,255,0.1); 
     padding: 15px; 
   }
-  .visual-card img { 
-    width: 100%; 
-    height: auto; 
-    /* This ensures the image never exceeds 70% of the screen height */
-    max-height: 70vh; 
-    /* This ensures the image doesn't look stretched or distorted */
-    object-fit: contain; 
+  .visual-card img {
+    width: 100%;
+    max-width: 300px; /* Forces the initial display to be smaller */
+    height: auto;
+    aspect-ratio: 1 / 2; /* Maintains your portrait-tall aesthetic */
+    object-fit: cover;
+    cursor: zoom-in;
   }
   .visual-card a img {
     transition: transform 0.2s ease;

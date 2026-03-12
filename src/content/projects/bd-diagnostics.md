@@ -41,7 +41,7 @@ To bridge the gap between complex medical diagnostics and patient-focused care, 
       <img 
         src="/assets/bd-vacutainer-600w.webp" 
         srcset="/assets/bd-vacutainer-600w.webp 600w, /assets/bd-vacutainer-1200w.webp 1200w" 
-        sizes="(max-width: 768px) 100vw, 400px" 
+        sizes="(max-width: 768px) 500vw, 200px" 
         alt="BD Vacutainer System Breakdown" 
         loading="lazy"
         style="cursor: zoom-in;"
