@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/MainLayout.astro';
+import NexusImage from '../../components/NexusImage.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -28,7 +29,7 @@ const { Content } = await render(project);
     <div class="nexus-rule"></div>
 
     <section class="project-content markdown-content">
-      <Content />
+      <Content components={{ NexusImage }} />
     </section>
     <a href={`/pillars/${project.data.pillar}`}>← BACK TO PILLAR</a>
   </article>
